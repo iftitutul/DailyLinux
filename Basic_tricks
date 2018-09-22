@@ -1,5 +1,3 @@
-
-
 1. sudo bang bang (!!) Command
 The bang bang (!!) command is a shortcut to repeat the previous command you entered in your terminal. This command is very useful when you forget that you need admin rights to make a certain action, and lets you repeat it with super-user rights just by typing
 
@@ -30,11 +28,10 @@ Shortcuts:
 ctrl+w : Delete the word BEFORE the cursor
 ctrl+a : Goto BEGINNING of command line
 ctrl+e : Goto END of command line
-ctrl+b : move back one character
-ctrl+f : move forward one character
-alt+f  : move cursor FORWARD one word
-alt+b  : move cursor BACK one word
+ctrl+b : Move back one character
+ctrl+f : Move forward one character
+alt+f  : Move cursor FORWARD one word
+alt+b  : Move cursor BACK one word
 ctrl+l : Clear the screen (same as clear command)
-
-3. Replace tail with
+ctrl+r : Reverse Search
 
