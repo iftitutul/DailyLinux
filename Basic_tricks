@@ -1,0 +1,40 @@
+
+
+1. sudo bang bang (!!) Command
+The bang bang (!!) command is a shortcut to repeat the previous command you entered in your terminal. This command is very useful when you forget that you need admin rights to make a certain action, and lets you repeat it with super-user rights just by typing
+
+$ apt install git
+E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)
+E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
+
+$ sudo !!
+sudo apt install git
+
+2. Killing and yanking text
+
+Command is:
+$find /var/log -type f -mtime +1 | xargs ls -lah | awk '{print $9}'
+
+Use (ctrl+k) : Clear all AFTER cursor
+$find /var/log -type f -mtime +1 
+
+
+Back to previous (ctrl+y) : Paste (if you used a previous command to delete)
+$find /var/log -type f -mtime +1 | xargs ls -lah | awk '{print $9}'
+
+Use (ctrl+u) : Clear all BEFORE cursor
+| xargs ls -lah | awk '{print $9}'
+
+Shortcuts:
+
+ctrl+w : Delete the word BEFORE the cursor
+ctrl+a : Goto BEGINNING of command line
+ctrl+e : Goto END of command line
+ctrl+b : move back one character
+ctrl+f : move forward one character
+alt+f  : move cursor FORWARD one word
+alt+b  : move cursor BACK one word
+ctrl+l : Clear the screen (same as clear command)
+
+3. Replace tail with
+
