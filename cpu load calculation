@@ -11,7 +11,7 @@ Avg single core load = (1.15 % 4)
                      
 # CPU Utilization:
 
-     CPU Utilization  = Avg Single core Load * 100
+     CPU Utilization = Avg Single core Load * 100
                      = 0.2875 * 100
      CPU Utilization = 28.75 % 
 
