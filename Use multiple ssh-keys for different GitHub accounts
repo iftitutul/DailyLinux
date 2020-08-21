@@ -1,0 +1,31 @@
+1. Create a new ssh-key and add it to the work GitHub account
+$ ssh-keygen -t rsa -b 4096 -C "my_work_email@my_company.com"
+Say the new ssh-key was named “work_rsa”, now copy the content of the newly generated public key file (work_rsa.pub in this example) and paste it to the work GitHub account’s setting page as described in the GitHub help page.
+
+2. Modify the ssh config file ( ~/.ssh/config)
+Open the config file in a text editor (create it if there isn’t one in the ~/.ssh folder yet) and add the following to it:
+# Personal GitHub account
+Host github.com
+ HostName github.com
+ User git
+ AddKeysToAgent yes
+ UseKeychain yes
+ IdentityFile ~/.ssh/id_rsa
+# Work GitHub account
+Host github.com-work
+ HostName github.com
+ User git
+ AddKeysToAgent yes
+ UseKeychain yes
+ IdentityFile ~/.ssh/work_rsa
+
+3. Clone the work project repo (with a slightly different address)
+To clone the work project repo using the new ssh-key we need to tweak a little bit on the repo’s ssh address. The host url needs to match the Host defined in the ssh config file from last step, namely, where in the address there is github.com, replace it with github.com-work.
+E.g., with the following private repo ssh address we get from GitHub:
+git@github.com:[my work GitHub group]/[my project].git
+We need to tweak its address like this before we can git clone it:
+git@github.com-work:[my work GitHub group]/[my project].git
+$ git clone git@github.com-work:[my work GitHub group]/[my project].git
+
+or, we can use simple command below:
+ssh-agent bash -c 'ssh-add /home/ec2-user/.ssh/cloudadmin_id_rsa; git clone git@github.com:[GitHub account]/[my project].git';
