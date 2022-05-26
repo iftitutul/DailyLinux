@@ -1,0 +1,15 @@
+## Exit codes are a number between 0 and 255, which is returned by any Unix command when it returns control to its parent process.
+
+- Success is traditionally represented with exit 0; 
+- failure is normally indicated with a non-zero exit-code. 
+This value can indicate different reasons for failure.
+
+These concepts apply to all programming languages even if the way error handling is implemented varies between programming languages.
+
+To handle errors in Bash we will use the exit command, whose syntax is:
+
+```
+exit N
+```
+
+Where N is the Bash exit code (or exit status) used to exit the script during its execution.
