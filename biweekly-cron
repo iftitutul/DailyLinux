@@ -1,0 +1,2 @@
+# Every 1st week/3rd week of Monday at 8.30am UTC Docker container restart
+30 08 1-7,15-21  * * [ $(date +\%u) = "1" ]  && docker restart $(docker ps -a -q)
